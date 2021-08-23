@@ -1,3 +1,7 @@
+const string = 'ini(str)ing(loh)'
+
+console.log(findFirstStringInBracket(string))
+
 function findFirstStringInBracket(str) {
   if (str.length > 0) {
     let indexFirstBracketFound = str.indexOf("(");
