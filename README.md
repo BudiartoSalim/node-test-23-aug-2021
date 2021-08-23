@@ -4,6 +4,6 @@
 1. SQL Queries = done
 2. Express Backend = not done
 3. Refactor Test = done
-4. Logic Test = not done
+4. Logic Test = done
 
 # How to run express backend
