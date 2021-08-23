@@ -6,3 +6,4 @@ Solutions:
 - after-recursive.js = uses recursive
 - after-str-funcs.js = not using any ifs or loops, all uses Javascript built-in functions
 - after-regex.js = uses regex instead of substr then string split, trim the brackets, then join again before returning
+- after-array.js = uses array methods and a string split
