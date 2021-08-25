@@ -4,4 +4,7 @@ const webServer = require('./webserver');
 // that way if we want to change express, we don't need to touch this and just need to abstract
 // the new framework to start with the same way we do here
 const PORT = process.env.PORT || 4000;
-webServer.start(PORT);
+
+if (process.env.NODE_ENV !== 'test') {
+  webServer.start(PORT);
+};
