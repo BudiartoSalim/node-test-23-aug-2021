@@ -1,1 +1,5 @@
-// will be filled with dependencies for dependency injection
+const repository = require('../frameworks/db/mysql/repositories/index');
+
+module.exports = {
+  repository
+}
