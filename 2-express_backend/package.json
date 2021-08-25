@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "node ./http/server.js",
-    "dev": "npx nodemon ./http/server.js",
+    "start": "node main.js",
+    "dev": "npx nodemon main.js",
     "test": "jest --verbose --runInBand --detectOpenHandles --coverage --forceExit"
   },
   "keywords": [],
