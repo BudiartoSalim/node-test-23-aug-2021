@@ -8,11 +8,12 @@
 
 # How to run express backend
 1. cd  2-express_backend
-2. DO NOT FORGET to set your env variables in .envtemplate and rename it to .env
-3. npm run migrate          // this will create the database and table needed
-4. npm run dev              // will run in dev mode, using nodemon
-5. npm run start            // will run for production
-6. npm run test             // runs unit test
+2. npm install
+3. DO NOT FORGET to set your env variables in .envtemplate and rename it to .env
+4. npm run migrate          // this will create the database and table needed
+5. npm run dev              // will run in dev mode, using nodemon
+6. npm run start            // will run for production
+7. npm run test             // runs unit test
 
 # How to use the API
 No auth or keys need to be given (except in the .env files)
