@@ -2,7 +2,7 @@
 
 # Status
 1. SQL Queries = done
-2. Express Backend = not done
+2. Express Backend = done
 3. Refactor Test = done
 4. Logic Test = done
 
@@ -35,3 +35,4 @@ API is deployed in Heroku and can be tested. Since both endpoints are GET method
 Unfortunately since Heroku requires credit card registration to use add-on, MySQL cannot be added to the deployed version, and the deployed version have the database call in Controller commented out.
 
 # Lastly, deployed app might be slow on first run due to cold start from Heroku free hosting.
+This ExpressJs is a first attempt to try implementing Clean Code Architecture. The implementation might have some mistakes.
