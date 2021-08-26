@@ -6,6 +6,9 @@
 3. Refactor Test = done
 4. Logic Test = done
 
+# Instructions to run are only for the express backend, but the other tests can also be tested to work as intended.
+Refactor and Logic test have multiple different implementations. It was pretty fun so I ended up trying multiple different ways I can solve the problem with.
+
 # How to run express backend
 1. cd  2-express_backend
 2. npm install
