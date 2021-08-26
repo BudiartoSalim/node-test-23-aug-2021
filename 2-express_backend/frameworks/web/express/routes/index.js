@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const movieRouter = require('./movie_routes');
+const MovieAdapter = require('../adapters/movie-adapter');
 
-router.use('/movies', movieRouter);
+router.use('/detail/:movieId', MovieAdapter.getMovieBySearch);
+router.get('/search', MovieAdapter.getMovieBySearch);
 
 module.exports = router;
