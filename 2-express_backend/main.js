@@ -1,3 +1,4 @@
+if (process.env.NODE_ENV !== 'production') { require('dotenv').config() };
 const webServer = require('./webserver');
 // This is just the abstraction of the server start being invoked
 // this is to make the server itself separate from express so the app is not dependent on express

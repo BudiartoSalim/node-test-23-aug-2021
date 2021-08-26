@@ -1,5 +1,5 @@
 class MovieController {
-  static getMovies(queryParams, urlParams) {
+  static getMovies({ queryParams, urlParams }, repository, api) {
     return {
       status: 200,
       data: {
