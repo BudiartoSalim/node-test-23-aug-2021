@@ -1,24 +1,20 @@
 const pool = require('../config');
 
 class MysqlMovieRepository {
-  static getMovieById(id) {
-    return new Promise((resolve, reject) => {
-      const query = `SELECT * FROM movies WHERE id = ? ;`;
-      const queryVariables = [id];
-
-      pool.query(query, queryVariables, (err, rows, field) => {
-        if (err) return reject(err);
-        resolve(rows);
-      })
-    })
-  }
-
-  static addMovieToDatabase({ title, year, imdbID, type, poster }) {
+  static logSearchToDatabase({ endpoint, provider, providerEndpoint, key, method, data, query_params }) {
     return new Promise((resolve, reject) => {
       const query = `INSERT INTO 
-      'movies' ('title', 'year', 'imdb_id', 'type', 'poster', created_at, updated_at)
-      VALUES (?, ?, ?, ?,  ?, NOW(), NOW());`
-      const queryVariables = [title, year, imdbID, type, poster];
+      movie_api_query_logs(endpoint, api_provider, provider_url_endpoint, method, api_key, response_body, query_parameters)
+      VALUES(?, ?, ?, ?, ?, ?, ?);`;
+      const queryVariables = [
+        endpoint,
+        provider,
+        providerEndpoint,
+        method,
+        key,
+        JSON.stringify(data),
+        JSON.stringify(query_params)
+      ];
 
       pool.query(query, queryVariables, (err, rows, field) => {
         if (err) return reject(err);
@@ -26,6 +22,7 @@ class MysqlMovieRepository {
       })
     })
   }
+
 }
 
-module.exports = MovieRepository;
+module.exports = MysqlMovieRepository;
