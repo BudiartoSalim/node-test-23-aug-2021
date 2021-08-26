@@ -3,9 +3,7 @@ class MovieController {
     const apiResult = await api.getMovies(queryParams);
     return {
       status: 200,
-      data: {
-        apiResult
-      }
+      data: apiResult
     }
   }
 }
