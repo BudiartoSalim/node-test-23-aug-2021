@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 // routes here
 app.use(router);
 
-
+const errorHandler = require('./middlewares/error_handler');
+app.use(errorHandler);
 
 module.exports = app;
