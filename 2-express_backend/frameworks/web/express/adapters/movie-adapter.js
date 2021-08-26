@@ -4,12 +4,12 @@ const MovieController = require('../../../../controllers/movie_controller');
 const dependencies = require('../../../../configs/dependencies');
 
 module.exports = class MovieAdapter {
-  static getMovieAdapter(req, res, next) {
+  static async getMovieBySearch(req, res, next) {
     try {
       const queryParams = req.query;
       const urlParams = req.params;
 
-      const results = MovieController.getMovies(
+      const results = await MovieController.getMovies(
         { queryParams, urlParams },
         dependencies.repository,
         dependencies.MovieApi

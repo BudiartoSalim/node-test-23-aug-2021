@@ -1,12 +1,10 @@
 class MovieController {
-  static getMovies({ queryParams, urlParams }, repository, api) {
+  static async getMovies({ queryParams, urlParams }, repository, api) {
+    const apiResult = await api.getMovies(queryParams);
     return {
       status: 200,
       data: {
-        message: "yes",
-        payload: "placeholder payload",
-        urlParams,
-        queryParams
+        apiResult
       }
     }
   }
