@@ -1,19 +1,23 @@
 const api = require('./config');
 
-module.exports = class AxiosOMDBApi {
+class AxiosOMDBApi {
   static async getMovies({ id, title, page, type, yearOfRelease }) {
     const queryParam = queryParamParser({ id, title, page, type, yearOfRelease });
     try {
-      return api({
+      const res = await api({
         url: '/?apikey=' + process.env.OMDB_API_KEY + queryParam,
         method: 'GET'
-      })
+      });
+      return {
+        data: res.data,
+        headers: res.headers,
+        status: res.status
+      };
     } catch (err) {
       throw err;
     }
   }
 }
-
 
 function queryParamParser(obj) {
   if (!obj) { return "" };
@@ -27,7 +31,10 @@ function queryParamParser(obj) {
     .filter((e) => {
       if (e.val) { return e }
     })
-  queries = queries.map((e) => { return `${e.key}=${e.val}` }).join("&");
+    .map((e) => { return `${e.key}=${e.val}` })
+    .join("&");
   if (queries) { queries = "&" + queries };
   return queries;
 }
+
+module.exports = AxiosOMDBApi;
