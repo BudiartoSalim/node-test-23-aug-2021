@@ -22,14 +22,14 @@ describe('Endpoint test', () => {
     test('should get the correct movie', (done) => {
       const imdbID = 'tt4853102';
       request(app)
-        .get('/detail' + imdbID)
+        .get('/detail/' + imdbID)
         .send()
         .end((err, res) => {
           if (err) { done(err) };
           expect(res.status).toBe(200);
-          expect(res.body.Title).toBe('Batman: The Killing Joke');
-          expect(res.body.year).toBe('2016');
-          expect(res.body.imdbID).toBe(imdbID);
+          expect(res.body.data.Title).toBe('Batman: The Killing Joke');
+          expect(res.body.data.Year).toBe('2016');
+          expect(res.body.data.imdbID).toBe(imdbID);
           done();
         })
     })

@@ -7,10 +7,24 @@ module.exports = class MovieAdapter {
   static async getMovieBySearch(req, res, next) {
     try {
       const queryParams = req.query;
-      const urlParams = req.params;
 
       const results = await MovieController.getMovies(
-        { queryParams, urlParams },
+        { queryParams },
+        dependencies.repository,
+        dependencies.MovieApi
+      );
+      res.status(results.status).json(results.data);
+    } catch (e) {
+      next(e);
+    }
+  }
+
+  static async getMovieById(req, res, next) {
+    try {
+      const urlParams = req.params;
+
+      const results = await MovieController.getMovieById(
+        { urlParams },
         dependencies.repository,
         dependencies.MovieApi
       );

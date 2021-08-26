@@ -22,7 +22,7 @@ class AxiosOMDBApi {
 function queryParamParser(obj) {
   if (!obj) { return "" };
   let queries = [
-    { key: 'id', val: obj.id },
+    { key: 'i', val: obj.id },
     { key: 's', val: obj.title },
     { key: 'page', val: obj.page },
     { key: 'type', val: obj.type },
