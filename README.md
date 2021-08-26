@@ -25,3 +25,13 @@ Will return an object "Search" with an array of object movies that are found.
 
 - GET "/detail/:imdbID"
 Will return 1 exact movie that have matching imdbID with the one specified in the url params
+
+# Deployed API
+API is deployed in Heroku and can be tested. Since both endpoints are GET methods, you can open it directly from browser and see the json return from it.
+- baseUrl: https://warm-beyond-53857.herokuapp.com/ 
+- example for detail endpoint with url param https://warm-beyond-53857.herokuapp.com/detail/tt4853102
+- example for search endpoint with query param https://warm-beyond-53857.herokuapp.com/search?title=Batman&page=2
+
+Unfortunately since Heroku requires credit card registration to use add-on, MySQL cannot be added to the deployed version, and the deployed version have the database call in Controller commented out.
+
+# Lastly, deployed app might be slow on first run due to cold start from Heroku free hosting.
